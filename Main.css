@@ -1,0 +1,31 @@
+/* Body styles */
+body {
+    background-color: #f0f0f0;  /* Light gray background */
+    color: #333333;             /* Dark gray text */
+    font-family: Arial, sans-serif;  /* Sets a clean font */
+}
+
+/* Navigation styles */
+nav {
+    height: 6000px;             /* Height of the navigation */
+    width: 200px;               /* Width of the navigation */
+    float: left;                /* Floats navigation to the left */
+    padding: 5px;               /* Adds padding inside the navigation */
+    line-height: 30px;          /* Increases the height of the links */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;         /* Centers the text */
+    margin-right: 200px;        /* Adds margin on the right */
+}
+
+/* Meme image styles */
+#memeImage {
+    margin-right: 200px;        /* Adds margin to the right of the meme image */
+}
+
+/* Header styles */
+header {
+    text-align: center;         /* Centers the header text */
+}
