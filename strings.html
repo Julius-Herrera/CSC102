@@ -61,9 +61,18 @@
     </style>
 </head>
 <body>
+    <!-- Audio element to play background sound -->
+    <audio id="backgroundSound" loop>
+        <source src="SoundBible.com Must Credit.mp3" type="audio/mp3">
+      
+    </audio>
+
     <!-- Page header -->
     <h1>Welcome to the Secret Message Checker</h1>
     <p>Please fill in your details to reveal the secret message.</p>
+
+    <!-- Play button to trigger the audio -->
+    <button onclick="playAudio()">Play Sound</button>
 
     <!-- Form for collecting inputs -->
     <form id="userForm">
@@ -81,7 +90,15 @@
         <div id="errorMessage" class="error"></div>
     </form>
 
+    <!-- Credit for the background sound -->
+    <p>Sound credit: "Must Credit" from SoundBible.com</p>
+
     <script>
+        // Function to play audio on button click
+        function playAudio() {
+            document.getElementById('backgroundSound').play();
+        }
+
         // Function to validate user inputs
         function validateInputs() {
             // Get input values
