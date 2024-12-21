@@ -1,66 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Comment: Page title and links to external stylesheets or fonts -->
+    <!-- Julius Herrera -->
+    <!-- String Manipulation Assignment: Collect and validate user inputs -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome Checker</title>
-    <!-- Add a nice background color and fonts for a good user experience -->
+    <title>Input Validation Assignment</title>
     <style>
+        /* Basic styling for a nice look and feel */
         body {
-            background-color: #f4f4f9;
+            background-color: #e3f2fd;
             font-family: Arial, sans-serif;
+            color: #333;
             padding: 20px;
         }
         h1 {
-            color: #333;
+            color: #1565c0;
         }
-        .result {
-            color: green;
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
             font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button {
+            background-color: #1565c0;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #0d47a1;
         }
         .error {
             color: red;
+            font-size: 0.9em;
+        }
+        .success {
+            color: green;
             font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
+    <!-- Page header -->
+    <h1>Welcome to the Secret Message Checker</h1>
+    <p>Please fill in your details to reveal the secret message.</p>
 
-    <!-- Comment: Display a heading for the page -->
-    <h1>Palindrome Checker</h1>
+    <!-- Form for collecting inputs -->
+    <form id="userForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" placeholder="Enter your first name" required>
 
-    <p>Enter a word or phrase to check if it's a palindrome:</p>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" placeholder="Enter your last name" required>
+
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" placeholder="Enter your zip code" required>
+
+        <button type="button" class="button" onclick="validateInputs()">Submit</button>
+        <div id="message" class="success"></div>
+        <div id="errorMessage" class="error"></div>
+    </form>
 
     <script>
-        // Comment: This JavaScript code runs when the page loads
-        function checkPalindrome() {
-            // Comment: Prompt the user to input a string
-            let userInput = prompt("Enter a word or phrase:");
+        // Function to validate user inputs
+        function validateInputs() {
+            // Get input values
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const zipCode = document.getElementById('zipCode').value.trim();
 
-            // Comment: Normalize the string (remove spaces and convert to lowercase)
-            userInput = userInput.replace(/\s+/g, '').toLowerCase();
+            // Combine first and last name
+            const fullName = firstName + ' ' + lastName;
 
-            // Comment: Reverse the string and check if it matches the original input
-            let reversedInput = userInput.split('').reverse().join('');
+            // Error and success message elements
+            const errorMessage = document.getElementById('errorMessage');
+            const message = document.getElementById('message');
 
-            // Comment: Display the result to the user
-            if (userInput === reversedInput) {
-                alert("This is a palindrome!");
-            } else {
-                alert("This is not a palindrome.");
+            // Clear previous messages
+            errorMessage.textContent = '';
+            message.textContent = '';
+
+            // Validate full name length
+            if (fullName.length > 20) {
+                errorMessage.textContent = 'Full name must be 20 characters or less.';
+                return;
             }
 
-            // Comment: Ask the user if they want to check another word
-            let again = confirm("Do you want to check another word?");
-            if (again) {
-                checkPalindrome(); // Recursively call the function to repeat the process
+            // Validate zip code format (5 digits)
+            const zipCodeRegex = /^\d{5}$/;
+            if (!zipCodeRegex.test(zipCode)) {
+                errorMessage.textContent = 'Zip code must be exactly 5 numeric digits.';
+                return;
             }
+
+            // If inputs are valid, show the secret message
+            message.textContent = 'Congratulations! The secret message is: "Code is Life!"';
         }
-
-        // Comment: Call the function to start the palindrome check
-        checkPalindrome();
     </script>
-    
 </body>
 </html>
