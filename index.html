@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Meme</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #meme {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transition: left 0.5s, top 0.5s;
+        }
+        
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Move the Meme!</h1>
+    <!-- Meme image -->
+    <img id="meme" src="ugru.jpeg" alt="Meme Image">
+
+    <!-- Start and Stop buttons -->
+    <button id="startButton" onclick="startMovement()">Start</button>
+    <button id="stopButton" onclick="stopMovement()" disabled>Stop</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
