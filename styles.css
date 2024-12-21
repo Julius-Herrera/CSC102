@@ -1,0 +1,37 @@
+/* Styling for the body element */
+body {
+    font-family: Arial, sans-serif;  /* Sets font family */
+    background-color: #2d3b2f;      /* Sets background color to dark green */
+    color: #ffffff;                 /* Sets text color to white */
+    text-align: center;             /* Centers text */
+}
+
+/* Styling for the main heading (h1) */
+h1 {
+    font-size: 2em;                 /* Increases font size */
+    color: gold;                    /* Sets text color to gold */
+}
+
+/* Styling for the button */
+button {
+    background-color: #f4b400;      /* Sets background color to yellow */
+    padding: 10px 20px;             /* Adds padding to the button */
+    font-size: 1.2em;               /* Increases font size */
+    color: #fff;                    /* Sets text color to white */
+    border: none;                   /* Removes border */
+    border-radius: 5px;             /* Rounds the corners of the button */
+    cursor: pointer;                /* Changes cursor to a pointer when hovered */
+}
+
+/* Changes the button's background color when hovered */
+button:hover {
+    background-color: #d48800;      /* Sets background color to a darker yellow */
+}
+
+/* Styling for the result display */
+#gameResult {
+    margin-top: 20px;                /* Adds space above the result */
+    font-size: 1.5em;                /* Increases font size */
+    font-weight: bold;               /* Makes the text bold */
+    color: #ff0000;                  /* Sets text color to red */
+}
